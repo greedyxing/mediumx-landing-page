@@ -155,8 +155,7 @@ export default () => {
       <GetStarted />
       {/* <Footer /> */}
       <CopyrightText>
-        &copy; Medium Enhanced Reader 2020{" "}
-        <span tw="ml-4">justin.project@yahoo.com</span>{" "}
+        &copy; Mediumx 2020 <span tw="ml-4">justin.project@yahoo.com</span>{" "}
       </CopyrightText>
     </AnimationRevealPage>
   );

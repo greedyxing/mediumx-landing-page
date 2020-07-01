@@ -61,8 +61,8 @@ export default ({ roundedHeaderButton }) => {
               <span tw="text-primary-500">for you.</span>
             </Heading>
             <Paragraph>
-              Medium Enhanced Reader is shipped with Browser Extension, so you
-              can get it with Chrome, Firefox or new Edge.
+              Mediumx is shipped with Browser Extension, so you can get it with
+              Chrome, Firefox or new Edge.
             </Paragraph>
             <Actions>
               <input type="text" placeholder="Your E-mail Address" />
