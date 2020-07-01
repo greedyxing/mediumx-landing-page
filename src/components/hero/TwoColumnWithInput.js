@@ -9,6 +9,8 @@ import Header from "../headers/light.js";
 import { ReactComponent as SvgDecoratorBlob1 } from "../../images/svg-decorator-blob-1.svg";
 import DesignIllustration from "../../images/design-illustration-2.svg";
 import CustomersLogoStripImage from "../../images/customers-logo-strip.png";
+import iconChrome from "images/icon-chrome.svg";
+import iconFirefox from "images/icon-firefox.svg";
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col lg:flex-row lg:items-center max-w-screen-xl mx-auto py-20 md:py-24`;
@@ -35,15 +37,17 @@ const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
   ${tw`pointer-events-none opacity-5 absolute left-0 bottom-0 h-64 w-64 transform -translate-x-2/3 -z-10`}
 `;
 
-const CustomersLogoStrip = styled.div`
-  ${tw`mt-12 lg:mt-20`}
-  p {
-    ${tw`uppercase text-sm lg:text-xs tracking-wider font-bold text-gray-500`}
-  }
-  img {
-    ${tw`mt-4 w-full lg:pr-16 xl:pr-32 opacity-50`}
-  }
-`;
+const CustomersLogoStrip = () => (
+  <div tw="mt-12 lg:mt-20">
+    <p tw="uppercase text-sm lg:text-xs tracking-wider font-bold text-gray-500">
+      YOU CAN FIND US AT:
+    </p>
+    <div tw="flex justify-start">
+      <img tw="w-16 mr-2 cursor-pointer" src={iconChrome} />
+      <img style={{ width: "52px" }} tw="cursor-pointer" src={iconFirefox} />
+    </div>
+  </div>
+);
 
 export default ({ roundedHeaderButton }) => {
   return (
@@ -64,10 +68,7 @@ export default ({ roundedHeaderButton }) => {
               <input type="text" placeholder="Your E-mail Address" />
               <button>Get Started</button>
             </Actions>
-            {/* <CustomersLogoStrip>
-              <p>Our TRUSTED Customers</p>
-              <img src={CustomersLogoStripImage} alt="Our Customers" />
-            </CustomersLogoStrip> */}
+            <CustomersLogoStrip></CustomersLogoStrip>
           </LeftColumn>
           <RightColumn>
             <IllustrationContainer>

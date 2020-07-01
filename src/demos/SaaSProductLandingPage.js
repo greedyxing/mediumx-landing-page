@@ -14,11 +14,14 @@ import closeIconPath from "images/close.svg";
 import { hideDevelopement } from "store/actionCreators";
 
 export default () => {
+  // 顶部Banner
   const isShowDevBanner = useSelector(state => state.utility.isShowDevBanner);
   const dispatch = useDispatch();
 
   const Subheading = tw.span`uppercase tracking-widest font-bold text-primary-500`;
   const HighlightedText = tw.span`text-primary-500`;
+
+  // 顶部版权
   const CopyrightText = tw.p`text-center`;
 
   const hideDevBanner = () => {
@@ -128,42 +131,33 @@ export default () => {
         }
         faqs={[
           {
-            question: "Are all the templates easily customizable ?",
+            question: "Can I read Medium.com Articles for free with this app ?",
             answer:
-              "Yes, they all are. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              "Yes, you can read medium membership articles for free easily with this extension"
           },
           {
-            question:
-              "How long do you usually support an standalone template for ?",
+            question: "Are this app already official released ? ",
             answer:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              "Not yet. This app and website are still under construction. But some features are already shipped."
           },
           {
-            question: "What kind of payment methods do you accept ?",
+            question: "Is it free ?",
             answer:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              "It is free for everyone forever. But you can go pro for more powerful features."
           },
           {
-            question:
-              "Is there a subscribption service to get the latest templates ?",
+            question: "How you guys protect my privacy?",
             answer:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          },
-          {
-            question: "Are the templates compatible with the React ?",
-            answer:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-          },
-          {
-            question: "Do you really support Internet Explorer 11 ?",
-            answer:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+              "Privacy of every user matters. Please refers to our privacy page"
           }
         ]}
       />
       <GetStarted />
       {/* <Footer /> */}
-      <CopyrightText>&copy; Medium Enhanced Reader 2020</CopyrightText>
+      <CopyrightText>
+        &copy; Medium Enhanced Reader 2020{" "}
+        <span tw="ml-4">justin.project@yahoo.com</span>{" "}
+      </CopyrightText>
     </AnimationRevealPage>
   );
 };

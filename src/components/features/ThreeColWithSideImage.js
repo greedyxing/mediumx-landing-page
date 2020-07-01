@@ -12,13 +12,11 @@ import { SectionDescription } from "components/misc/Typography.js";
 import defaultCardImage from "images/shield-icon.svg";
 
 import { ReactComponent as SvgDecoratorBlob3 } from "images/svg-decorator-blob-3.svg";
-
-import SupportIconImage from "images/support-icon.svg";
-import ShieldIconImage from "images/shield-icon.svg";
-import CustomizeIconImage from "images/customize-icon.svg";
-import FastIconImage from "images/fast-icon.svg";
-import ReliableIconImage from "images/reliable-icon.svg";
+import iconPassword from "images/icon-password.svg";
+import iconComment from "images/icon-comment.svg";
+import iconTheme from "images/icon-theme.svg";
 import SimpleIconImage from "images/simple-icon.svg";
+import iconExport from "images/icon-export.svg";
 
 const Container = tw.div`relative`;
 
@@ -65,7 +63,7 @@ export default ({
   cards = null,
   heading = "Amazing Features",
   subheading = "Features",
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  description = ""
 }) => {
   /*
    * This componets has an array of object denoting the cards defined below. Each object in the cards array can have the key (Change it according to your need, you can also add more objects to have more cards in this feature component) or you can directly pass this using the cards prop:
@@ -77,24 +75,28 @@ export default ({
 
   const defaultCards = [
     {
-      imageSrc: ShieldIconImage,
+      imageSrc: iconPassword,
       title: "Free to read",
       description: "We unblock Medium paywall for all readers"
     },
     {
-      imageSrc: SupportIconImage,
+      imageSrc: iconComment,
       title: "Classic Comment System",
       description:
         "shift from weird Medium comment style to our classic blog comment system with no pain"
     },
     {
-      imageSrc: CustomizeIconImage,
+      imageSrc: iconTheme,
       title: "Colorful Themes",
       description:
         "we provide 3 basic theme (dark, eye and default) for medium article page"
     },
-    { imageSrc: SimpleIconImage, title: "Export", description: "" },
-    { imageSrc: SimpleIconImage, title: "Easy" },
+    {
+      imageSrc: SimpleIconImage,
+      title: "Export",
+      description:
+        "Export medium article/publication to pdf/word or even epub ebook"
+    },
     {
       imageSrc: SimpleIconImage,
       title: "Easy",

@@ -29,6 +29,7 @@ import AboutPage from "pages/AboutUs";
 import PricingPage from "pages/Pricing";
 import BlogPage from "pages/BlogIndex";
 import AuthPage from "pages/Signup";
+import ContactPage from "pages/ContactUs";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -48,6 +49,9 @@ export default function App() {
         </Route>
         <Route path="/auth">
           <AuthPage />
+        </Route>
+        <Route path="/contact-us">
+          <ContactPage />
         </Route>
         <Route path="/">
           <SaaSProductLandingPage />

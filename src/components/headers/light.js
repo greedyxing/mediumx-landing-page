@@ -82,6 +82,9 @@ export default ({
       <NavLink href="/pricing">Pricing</NavLink>
       <NavLink href="https://jackofallcoding.tech/about">Author</NavLink>
       <NavLink href="/blog">Blog</NavLink>
+      <NavLink href="https://sites.google.com/view/medium-enhanced-reader-ppu/home">
+        Privacy
+      </NavLink>
       {/* <NavLink href="/login" tw="lg:ml-12!">
         Login
       </NavLink> */}

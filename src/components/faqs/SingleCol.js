@@ -3,7 +3,10 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
-import { SectionHeading, Subheading as SubheadingBase } from "components/misc/Headings.js";
+import {
+  SectionHeading,
+  Subheading as SubheadingBase
+} from "components/misc/Headings.js";
 import { SectionDescription } from "components/misc/Typography.js";
 import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
 import { ReactComponent as ChevronDownIcon } from "feather-icons/dist/icons/chevron-down.svg";
@@ -27,7 +30,9 @@ const QuestionToggleIcon = motion.custom(styled.span`
     ${tw`w-6 h-6`}
   }
 `);
-const Answer = motion.custom(tw.dd`pointer-events-none text-sm sm:text-base leading-relaxed`);
+const Answer = motion.custom(
+  tw.dd`pointer-events-none text-sm sm:text-base leading-relaxed`
+);
 
 const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
   ${tw`pointer-events-none -z-20 absolute right-0 top-0 h-56 w-56 opacity-15 transform translate-x-2/3 -translate-y-12 text-teal-400`}
@@ -36,12 +41,10 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
   ${tw`pointer-events-none -z-20 absolute left-0 bottom-0 h-64 w-64 opacity-15 transform -translate-x-2/3 text-primary-500`}
 `;
 
-
-
 export default ({
   subheading = "FAQS",
   heading = "You have Questions ?",
-  description = "And we have got answers to all of them. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  description = "",
   faqs = [
     {
       question: "Is lunch provided free of cost ?",
@@ -98,8 +101,13 @@ export default ({
                       open: { rotate: -180 }
                     }}
                     initial="collapsed"
-                    animate={activeQuestionIndex === index ? "open" : "collapsed"}
-                    transition={{ duration: 0.02, ease: [0.04, 0.62, 0.23, 0.98] }}
+                    animate={
+                      activeQuestionIndex === index ? "open" : "collapsed"
+                    }
+                    transition={{
+                      duration: 0.02,
+                      ease: [0.04, 0.62, 0.23, 0.98]
+                    }}
                   >
                     <ChevronDownIcon />
                   </QuestionToggleIcon>
@@ -120,7 +128,7 @@ export default ({
           </FAQSContainer>
         </Column>
       </ContentWithPaddingXl>
-      <DecoratorBlob1/>
+      <DecoratorBlob1 />
       <DecoratorBlob2 />
     </Container>
   );
