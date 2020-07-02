@@ -11,6 +11,7 @@ import DesignIllustration from "../../images/design-illustration-2.svg";
 import CustomersLogoStripImage from "../../images/customers-logo-strip.png";
 import iconChrome from "images/icon-chrome.svg";
 import iconFirefox from "images/icon-firefox.svg";
+import iconEdge from "images/icon-edge.svg";
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col lg:flex-row lg:items-center max-w-screen-xl mx-auto py-20 md:py-24`;
@@ -44,7 +45,15 @@ const CustomersLogoStrip = () => (
     </p>
     <div tw="flex justify-start">
       <img tw="w-16 mr-2 cursor-pointer" src={iconChrome} />
-      <img style={{ width: "52px" }} tw="cursor-pointer" src={iconFirefox} />
+      <img tw="w-16 mr-2 cursor-pointer" src={iconFirefox} />
+      <img
+        tw="w-16 mr-2 cursor-pointer"
+        src={iconEdge}
+        onClick={() =>
+          (window.location.href =
+            "https://microsoftedge.microsoft.com/addons/detail/mediumx/noiclkkclhmobbobccfnpepkdbpgjekc")
+        }
+      />
     </div>
   </div>
 );
