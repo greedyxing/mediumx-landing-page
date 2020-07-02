@@ -45,7 +45,14 @@ const CustomersLogoStrip = () => (
     </p>
     <div tw="flex justify-start">
       <img tw="w-16 mr-2 cursor-pointer" src={iconChrome} />
-      <img tw="w-16 mr-2 cursor-pointer" src={iconFirefox} />
+      <img
+        tw="w-16 mr-2 cursor-pointer"
+        src={iconFirefox}
+        onClick={() =>
+          (window.location.href =
+            "https://addons.mozilla.org/en-US/firefox/addon/mediumx/")
+        }
+      />
       <img
         tw="w-16 mr-2 cursor-pointer"
         src={iconEdge}
