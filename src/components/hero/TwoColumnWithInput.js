@@ -44,7 +44,14 @@ const CustomersLogoStrip = () => (
       YOU CAN FIND US AT:
     </p>
     <div tw="flex justify-start">
-      <img tw="w-16 mr-2 cursor-pointer" src={iconChrome} />
+      <img
+        tw="w-16 mr-2 cursor-pointer"
+        src={iconChrome}
+        onClick={() =>
+          (window.location.href =
+            "https://chrome.google.com/webstore/detail/mediumx/ihpbajopffcgpecfkbmpkpkhfhcgfcdj?hl=en-GB&authuser=0")
+        }
+      />
       <img
         tw="w-16 mr-2 cursor-pointer"
         src={iconFirefox}
