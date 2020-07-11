@@ -33,29 +33,43 @@ import ContactPage from "pages/ContactUs";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+const GetBaidu = props => {
+  let children = props.children;
+  let _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?5aafa25d50339782f08e82eaa9aabb96";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  return children;
+};
+
 export default function App() {
   // return <AnimationRevealPage disabled></AnimationRevealPage>;
   return (
     <Router>
       <Switch>
-        <Route path="/about">
-          <AboutPage />
-        </Route>
-        <Route path="/pricing">
-          <PricingPage />
-        </Route>
-        <Route path="/blog">
-          <BlogPage />
-        </Route>
-        <Route path="/auth">
-          <AuthPage />
-        </Route>
-        <Route path="/contact-us">
-          <ContactPage />
-        </Route>
-        <Route path="/">
-          <SaaSProductLandingPage />
-        </Route>
+        <GetBaidu>
+          <Route path="/about">
+            <AboutPage />
+          </Route>
+          <Route path="/pricing">
+            <PricingPage />
+          </Route>
+          <Route path="/blog">
+            <BlogPage />
+          </Route>
+          <Route path="/auth">
+            <AuthPage />
+          </Route>
+          <Route path="/contact-us">
+            <ContactPage />
+          </Route>
+          <Route path="/">
+            <SaaSProductLandingPage />
+          </Route>
+        </GetBaidu>
       </Switch>
     </Router>
   );
