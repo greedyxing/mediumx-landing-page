@@ -30,8 +30,21 @@ import PricingPage from "pages/Pricing";
 import BlogPage from "pages/BlogIndex";
 import AuthPage from "pages/Signup";
 import ContactPage from "pages/ContactUs";
+import { createBrowserHistory } from "history";
+import ReactGA from "react-ga";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+const history = createBrowserHistory();
+
+// 初始化google analytics
+ReactGA.initialize("UA-172151302-1");
+
+// Initialize google analytics page view tracking
+history.listen(location => {
+  ReactGA.set({ page: location.pathname }); // Update the user's current page
+  ReactGA.pageview(location.pathname); // Record a pageview for the given page
+});
 
 const GetBaidu = props => {
   let children = props.children;
