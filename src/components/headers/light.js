@@ -78,10 +78,10 @@ export default ({
    */
   const defaultLinks = [
     <NavLinks key={1}>
-      <NavLink href="#">About</NavLink>
-      <NavLink href="#">Pricing</NavLink>
+      <NavLink href="/#">About</NavLink>
+      <NavLink href="/#">Pricing</NavLink>
       <NavLink href="https://jackofallcoding.tech/about">Author</NavLink>
-      <NavLink href="#">Blog</NavLink>
+      <NavLink href="/blog">Blog</NavLink>
       <NavLink href="https://sites.google.com/view/medium-enhanced-reader-ppu/home">
         Privacy
       </NavLink>

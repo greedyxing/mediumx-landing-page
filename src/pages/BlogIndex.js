@@ -84,6 +84,9 @@ export default ({
   const onLoadMoreClick = () => {
     setVisible(v => v + 6);
   };
+
+  // 顶部版权
+  const CopyrightText = tw.p`text-center`;
   return (
     <AnimationRevealPage>
       <Header />
@@ -101,7 +104,9 @@ export default ({
                     <Category>{post.category}</Category>
                     <CreationDate>{post.date}</CreationDate>
                     <Title>{post.title}</Title>
-                    {post.featured && post.description && <Description>{post.description}</Description>}
+                    {post.featured && post.description && (
+                      <Description>{post.description}</Description>
+                    )}
                   </Info>
                 </Post>
               </PostContainer>
@@ -109,12 +114,17 @@ export default ({
           </Posts>
           {visible < posts.length && (
             <ButtonContainer>
-              <LoadMoreButton onClick={onLoadMoreClick}>Load More</LoadMoreButton>
+              <LoadMoreButton onClick={onLoadMoreClick}>
+                Load More
+              </LoadMoreButton>
             </ButtonContainer>
           )}
         </ContentWithPaddingXl>
       </Container>
-      <Footer />
+      {/* <Footer /> */}
+      <CopyrightText>
+        &copy; Mediumx 2020 <span tw="ml-4">justin.project@yahoo.com</span>{" "}
+      </CopyrightText>
     </AnimationRevealPage>
   );
 };

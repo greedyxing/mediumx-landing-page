@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
@@ -28,6 +29,12 @@ export default () => {
     const action = hideDevelopement(false);
     dispatch(action);
   };
+
+  // 是否渲染
+  const { pathname } = useLocation();
+  if (pathname !== "/" && pathname !== "/#") {
+    return false;
+  }
 
   return (
     <AnimationRevealPage>
