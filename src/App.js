@@ -1,6 +1,7 @@
 import "tailwindcss/dist/base.css";
 import "styles/globalStyles.css";
 import React from "react";
+import Routes from "./routes";
 import { css } from "styled-components/macro"; //eslint-disable-line
 
 /*
@@ -16,7 +17,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
  */
 
 /* Use AnimationRevealPage as a wrapper component for your pages if you are custom building it */
-// import AnimationRevealPage from "helpers/AnimationRevealPage.js";
+// import AnimationRevealPage from "./helpers/AnimationRevealPage.js";
 
 /*
  * Hero section is the top most section on the page. It contains the header as well.
@@ -24,66 +25,6 @@ import { css } from "styled-components/macro"; //eslint-disable-line
  * separately
  */
 
-import SaaSProductLandingPage from "demos/SaaSProductLandingPage.js";
-import AboutPage from "pages/AboutUs";
-import PricingPage from "pages/Pricing";
-import BlogPage from "pages/BlogIndex";
-import AuthPage from "pages/Signup";
-import ContactPage from "pages/ContactUs";
-import { createBrowserHistory } from "history";
-import ReactGA from "react-ga";
-
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-const history = createBrowserHistory();
-
-// 初始化google analytics
-ReactGA.initialize("UA-172151302-1");
-
-// Initialize google analytics page view tracking
-history.listen(location => {
-  ReactGA.set({ page: location.pathname }); // Update the user's current page
-  ReactGA.pageview(location.pathname); // Record a pageview for the given page
-});
-
-const GetBaidu = props => {
-  let children = props.children;
-  let _hmt = _hmt || [];
-  (function() {
-    var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?5aafa25d50339782f08e82eaa9aabb96";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
-  return children;
-};
-
 export default function App() {
-  // return <AnimationRevealPage disabled></AnimationRevealPage>;
-  return (
-    <Router>
-      <Switch>
-        <GetBaidu>
-          <Route path="/about">
-            <AboutPage />
-          </Route>
-          <Route path="/pricing">
-            <PricingPage />
-          </Route>
-          <Route path="/blog">
-            <BlogPage />
-          </Route>
-          <Route path="/auth">
-            <AuthPage />
-          </Route>
-          <Route path="/contact-us">
-            <ContactPage />
-          </Route>
-          <Route path="/">
-            <SaaSProductLandingPage />
-          </Route>
-        </GetBaidu>
-      </Switch>
-    </Router>
-  );
+  return <Routes></Routes>;
 }

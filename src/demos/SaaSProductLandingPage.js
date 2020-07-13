@@ -42,17 +42,17 @@ export default () => {
       <Features
         subheading={<Subheading>Features</Subheading>}
         heading={
-          <>
+          <React.Fragment>
             We have Amazing <HighlightedText>Features.</HighlightedText>
-          </>
+          </React.Fragment>
         }
       />
       <Pricing
         subheading={<Subheading>Pricing</Subheading>}
         heading={
-          <>
+          <React.Fragment>
             Reasonable & Flexible <HighlightedText>Plans.</HighlightedText>
-          </>
+          </React.Fragment>
         }
         plans={[
           {
@@ -95,9 +95,9 @@ export default () => {
       <Testimonial
         subheading={<Subheading>Testimonials</Subheading>}
         heading={
-          <>
+          <React.Fragment>
             Our Clients <HighlightedText>Love Us.</HighlightedText>
-          </>
+          </React.Fragment>
         }
         testimonials={[
           {
@@ -125,9 +125,9 @@ export default () => {
       <FAQ
         subheading={<Subheading>FAQS</Subheading>}
         heading={
-          <>
+          <React.Fragment>
             You have <HighlightedText>Questions ?</HighlightedText>
-          </>
+          </React.Fragment>
         }
         faqs={[
           {
