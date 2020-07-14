@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useParams
+} from "react-router-dom";
 import GetBaidu from "./helpers/GetBaidu";
 import getGoogleAnalytics from "./helpers/GetGoogleAnalytics";
 
@@ -9,6 +14,7 @@ import PricingPage from "./pages/Pricing";
 import BlogPage from "./pages/BlogIndex";
 import AuthPage from "./pages/Signup";
 import ContactPage from "./pages/ContactUs";
+import { Blogs } from "Blog";
 
 export default function Routes() {
   // 激活google analytics
@@ -18,26 +24,40 @@ export default function Routes() {
     <Router>
       <Switch>
         <GetBaidu>
-          <Route path="/about">
+          <Route exact path="/about">
             <AboutPage />
           </Route>
-          <Route path="/pricing">
+          <Route exact path="/pricing">
             <PricingPage />
           </Route>
-          <Route path="/blog">
+          <Route exact path="/blog">
             <BlogPage />
           </Route>
-          <Route path="/auth">
+          <Route exact path="/blog/:id">
+            <Child />
+          </Route>
+          <Route exact path="/auth">
             <AuthPage />
           </Route>
-          <Route path="/contact-us">
+          <Route exact path="/contact-us">
             <ContactPage />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <SaaSProductLandingPage />
           </Route>
         </GetBaidu>
       </Switch>
     </Router>
+  );
+}
+
+function Child() {
+  let { id } = useParams();
+  const BlogComponent = Blogs[id];
+
+  return (
+    <>
+      <BlogComponent />
+    </>
   );
 }

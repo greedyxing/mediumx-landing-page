@@ -62,7 +62,7 @@ export default ({
         Reading from twitter DM, Telegram’s Instant View, and MediumX. 
         MediumX is a browser extension, and let you read Medium for free.
         `,
-      url: "/",
+      url: "/blog/how-to-read-medium-articles-for-free-2020",
       featured: true
     }
   ]
@@ -110,7 +110,6 @@ export default ({
           )}
         </ContentWithPaddingXl>
       </Container>
-      {/* <Footer /> */}
       <CopyrightText>
         &copy; Mediumx 2020 <span tw="ml-4">justin.project@yahoo.com</span>{" "}
       </CopyrightText>

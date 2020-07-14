@@ -30,12 +30,6 @@ export default () => {
     dispatch(action);
   };
 
-  // 是否渲染
-  const { pathname } = useLocation();
-  if (pathname !== "/" && pathname !== "/#") {
-    return false;
-  }
-
   return (
     <AnimationRevealPage>
       <TopBanner
